@@ -3,6 +3,17 @@ defmodule Games.RockPaperScissors do
   Documentation for `Games`.
   """
 
+  @doc """
+  Checks if player1 beats player2 and returns a boolean.
+
+  ## Examples
+
+      iex> Games.RockPaperScissors.beats?("rock", "scissors")
+      true
+
+      iex> Games.RockPaperScissors.beats?("rock", "paper")
+      false
+  """
   @spec beats?(String.t(), String.t()) :: boolean()
   def beats?(player1, player2),
     do:
@@ -12,6 +23,9 @@ defmodule Games.RockPaperScissors do
         {"scissors", "paper"}
       ]
 
+  @doc """
+  Start the game
+  """
   @spec start :: String.t()
   def start do
     player_choice = IO.gets("rock/paper/scissors: ") |> String.trim()
